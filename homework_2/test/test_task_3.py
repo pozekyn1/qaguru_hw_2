@@ -23,12 +23,9 @@ def test_selenium_web_open_google(driver):
     assert driver.current_url == url
 
 
+# Убрал проверку для названия вкладки, потому что на GitHub он меняется
 @pytest.mark.selenium
 def test_selenium_web_open_github(driver):
     url = "https://github.com/"
     driver.get(url)
     assert driver.current_url == url
-    assert (
-        driver.title
-        == "GitHub · Build and ship software on a single, collaborative platform · GitHub"
-    )
